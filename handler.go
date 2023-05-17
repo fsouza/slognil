@@ -1,16 +1,20 @@
 package slognil
 
-import "golang.org/x/exp/slog"
+import (
+	"context"
+
+	"golang.org/x/exp/slog"
+)
 
 type Handler struct{}
 
 var _ slog.Handler = Handler{}
 
-func (Handler) Enabled(slog.Level) bool {
+func (Handler) Enabled(context.Context, slog.Level) bool {
 	return false
 }
 
-func (Handler) Handle(r slog.Record) error {
+func (Handler) Handle(context.Context, slog.Record) error {
 	return nil
 }
 

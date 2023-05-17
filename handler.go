@@ -25,3 +25,8 @@ func (h Handler) WithAttrs(attrs []slog.Attr) slog.Handler {
 func (h Handler) WithGroup(name string) slog.Handler {
 	return h
 }
+
+// NewLogger returns a logger configured to use the nil handler.
+func NewLogger() *slog.Logger {
+	return slog.New(Handler{})
+}

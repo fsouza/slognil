@@ -2,7 +2,8 @@ package slognil
 
 import (
 	"context"
-	"log/slog"
+
+	"golang.org/x/exp/slog"
 )
 
 type Handler struct{}
